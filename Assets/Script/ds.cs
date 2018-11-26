@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Threading.Tasks;
 
 
 public class ds : MonoBehaviour {
@@ -18,23 +19,6 @@ public class ds : MonoBehaviour {
 
 	private void Start()
 	{
-		//ttttt.SetText("");
-		//for (int i = 50; i > 0; i--)
-		//{
-		//	for (int j = 0; j < 80; j++)
-		//	{
-		//		if (f.GetPixel(j, i).r >= 0.5f)
-		//		{
-		//			ttttt.text += "0";
-		//		}
-		//		else
-		//		{
-		//			ttttt.text += "1";
-		//		}
-		//	}
-		//	ttttt.text += "\n";
-		//}
-
 		for (int i = 1; i <= 4653; i++)
 		{
 
@@ -45,7 +29,7 @@ public class ds : MonoBehaviour {
 	private void Update()
 	{
 		timer += Time.deltaTime;
-		if (Time.frameCount % 3 == 0)
+		if (Time.frameCount % 2 == 0)
 		{
 			ttttt.SetText("");
 			f = dsds[a];
@@ -55,7 +39,7 @@ public class ds : MonoBehaviour {
 				{
 					if (dsds[a].GetPixel(j, i).r >= 0.5f)
 					{
-						ttttt.text += "1";
+						ttttt.text += "a";
 					}
 					else
 					{
@@ -70,7 +54,6 @@ public class ds : MonoBehaviour {
 				Debug.Log(timer);
 			}
 		}
-
 	}
 
 }
