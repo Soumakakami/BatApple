@@ -16,6 +16,8 @@ public class VideoTest : MonoBehaviour
 	public int h = 36;
 	public int t = 64;
 	public TextMeshProUGUI text;
+	public AudioSource audioSource;
+	public AudioClip clip;
 
 	public Material material;
 
@@ -35,6 +37,8 @@ public class VideoTest : MonoBehaviour
 			StartCoroutine(StartVideo());
 			stopFlag = true;
 			material.color = Color.black;
+			audioSource.clip = clip;
+			audioSource.Play();
 		}
 	}
 
@@ -46,15 +50,12 @@ public class VideoTest : MonoBehaviour
 	{
 		while (true)
 		{
-			time += Time.deltaTime;
-			
 
 			textures.Add(rt.CreateTexture2D(camera));
 			yield return new WaitForSeconds(0.033f);
 			//yield return null;
 			if (stopFlag)
 			{
-				Debug.Log(time);
 				yield break;
 			}
 		}
@@ -70,8 +71,6 @@ public class VideoTest : MonoBehaviour
 		m_videoPlayer.enabled=false;
 		foreach (Texture2D tex in textures)
 		{
-			time += Time.deltaTime;
-			Debug.Log(time);
 			text.SetText("");
 			for (int i = h; i > 0; i--)
 			{
