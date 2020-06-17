@@ -19,6 +19,7 @@ public class ds : MonoBehaviour {
 
 	private void Start()
 	{
+		Application.targetFrameRate = 31;
 		for (int i = 1; i <= 4653; i++)
 		{
 
@@ -29,8 +30,6 @@ public class ds : MonoBehaviour {
 	private void Update()
 	{
 		timer += Time.deltaTime;
-		if (Time.frameCount % 2 == 0)
-		{
 			ttttt.SetText("");
 			f = dsds[a];
 			for (int i = h; i > 0; i--)
@@ -39,7 +38,7 @@ public class ds : MonoBehaviour {
 				{
 					if (dsds[a].GetPixel(j, i).r >= 0.5f)
 					{
-						ttttt.text += "a";
+						ttttt.text += "1";
 					}
 					else
 					{
@@ -53,7 +52,6 @@ public class ds : MonoBehaviour {
 			{
 				Debug.Log(timer);
 			}
-		}
 	}
 
 }
